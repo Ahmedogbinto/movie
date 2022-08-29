@@ -6,8 +6,18 @@ import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
 
 
 public class MovieService implements MovieServiceInterface {
+
     private MovieRepository movieRepository = new MovieRepository();
     private MovieRepositoryInterface movieRepositoryInterface;
+
+    public MovieRepositoryInterface getMovieRepositoryInterface() {
+        return movieRepositoryInterface;
+    }
+
+    public void setMovieRepositoryInterface(MovieRepositoryInterface movieRepositoryInterface) {
+        this.movieRepositoryInterface = movieRepositoryInterface;
+    }
+
     public void registerMovie(Movie movie){
         movieRepositoryInterface.add(movie);
 

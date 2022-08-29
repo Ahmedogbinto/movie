@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieRepository implements MovieRepositoryInterface {
+
     private static List<Movie> movies = new ArrayList<>();
 
     public void add(Movie movie){

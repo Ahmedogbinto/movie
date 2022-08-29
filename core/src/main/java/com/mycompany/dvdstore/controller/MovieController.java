@@ -15,6 +15,14 @@ public class MovieController {
 
     private MovieServiceInterface movieServiceInterface;
 
+    public MovieServiceInterface getMovieServiceInterface() {
+        return movieServiceInterface;
+    }
+
+    public void setMovieServiceInterface(MovieServiceInterface movieServiceInterface) {
+        this.movieServiceInterface = movieServiceInterface;
+    }
+
     public void addMovieUsingConsole(){
         System.out.println( "Quel est le titre du film a ajouté?" );
         Scanner scanner = new Scanner(System.in);
