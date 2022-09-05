@@ -13,6 +13,7 @@ public class MovieController {
     }
 
     public void setMovieServiceInterface(MovieServiceInterface movieServiceInterface) {
+
         this.movieServiceInterface = movieServiceInterface;
     }
 

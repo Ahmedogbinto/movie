@@ -17,6 +17,6 @@ public class FileMovieRepository implements MovieRepositoryInterface{
         catch(IOException e){
             e.printStackTrace();
         }
-        System.out.println("Le titre du film est "+movie.getTitle()+" et son genre est "+movie.getGenre());
+        System.out.println("Fichier txt: Le titre du film est "+movie.getTitle()+" et son genre est "+movie.getGenre());
     }
 }

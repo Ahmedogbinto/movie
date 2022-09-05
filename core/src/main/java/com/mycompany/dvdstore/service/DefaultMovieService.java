@@ -20,7 +20,7 @@ public class DefaultMovieService implements MovieServiceInterface {
     public void registerMovie(Movie movie){
         movieRepositoryInterface.add(movie);
 
-        System.out.println("Son titre est "+movie.getTitle()+" et son genre est "+movie.getGenre());
+        System.out.println(" Son titre est "+movie.getTitle()+" et son genre est "+movie.getGenre());
     }
 
 

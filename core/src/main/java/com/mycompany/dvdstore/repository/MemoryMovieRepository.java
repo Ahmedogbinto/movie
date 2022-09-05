@@ -12,6 +12,6 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
     public void add(Movie movie){
         movies.add(movie);
 
-        System.out.println("Le DVD a bien été ajouté avec succèes a la liste des films");
+        System.out.println("Memoire interne: Le DVD a bien été ajouté avec succèes a la liste des films");
     }
 }

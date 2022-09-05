@@ -19,7 +19,7 @@ public class LiveMovieService implements MovieServiceInterface{
 
         movieRepositoryInterface.add(movie);
 
-        System.out.println(" Le Film a bien été ajouté dans fichier txt");
+        System.out.println("Le Film a bien été ajouté dans fichier txt");
 
     }
 
