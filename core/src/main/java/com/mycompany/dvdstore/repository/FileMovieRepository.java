@@ -2,15 +2,25 @@ package com.mycompany.dvdstore.repository;
 
 import com.mycompany.dvdstore.entity.Movie;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileMovieRepository implements MovieRepositoryInterface{
+    private File file;
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
+    }
 
     public void add(Movie movie){
         FileWriter writer;
         try{
-            writer=new FileWriter("C:\\temp\\movies.txt",true);
+            writer=new FileWriter(file,true);   // instanciation du FileWriter encours, pour utiliser l'objet de type File afin d'écrire dans un fichier
             writer.write(movie.getTitle()+";"+movie.getGenre()+"\n");
             writer.close();
         }
