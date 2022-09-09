@@ -1,14 +1,18 @@
-package com.mycompany.dvdstore.repository;
+package com.mycompany.dvdstore.repository.file;
 
 import com.mycompany.dvdstore.entity.Movie;
+import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileMovieRepository implements MovieRepositoryInterface{
-    @Value("${movie.file.location}") private File file;
+@Repository
+public class FileMovieRepository implements MovieRepositoryInterface {
+    @Value("${movie.file.location}")
+    private File file;
     public File getFile() {
         return file;
     }
@@ -17,10 +21,10 @@ public class FileMovieRepository implements MovieRepositoryInterface{
         this.file = file;
     }
 
-    public void add(Movie movie){
+    public void add( Movie movie){
         FileWriter writer;
         try{
-            writer=new FileWriter(file,true);   // instanciation du FileWriter encours, pour utiliser l'objet de type File afin d'écrire dans un fichier
+            writer=new FileWriter(file, true);                    // instanciation du FileWriter encours, pour utiliser l'objet de type File afin d'écrire dans un fichier
             writer.write(movie.getTitle()+";"+movie.getGenre()+"\n");
             writer.close();
         }
