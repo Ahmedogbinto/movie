@@ -17,4 +17,9 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
 
         System.out.println("Memoire interne: Le DVD a bien été ajouté avec succèes a la liste des films");
     }
+
+    @Override
+    public List<Movie> list() {
+        return movies;
+    }
 }
