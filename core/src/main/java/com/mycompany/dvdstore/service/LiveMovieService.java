@@ -5,8 +5,6 @@ import com.mycompany.dvdstore.repository.MovieRepositoryInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class LiveMovieService implements MovieServiceInterface {
 @Autowired
@@ -25,10 +23,7 @@ private MovieRepositoryInterface movieRepository;
         movieRepository.add(movie);
 
         System.out.println("Le Film a bien été ajouté dans fichier txt");
+
     }
 
-    @Override
-    public List<Movie> getMovieList() {
-        return movieRepository.list();
-    }
 }
