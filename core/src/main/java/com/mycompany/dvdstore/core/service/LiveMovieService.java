@@ -31,4 +31,9 @@ private MovieRepositoryInterface movieRepository;
     public List<Movie> getMovieList() {
         return movieRepository.list();
     }
+
+    @Override
+    public Movie getMovieById(long id) {
+        return movieRepository.getById(id);
+    }
 }
