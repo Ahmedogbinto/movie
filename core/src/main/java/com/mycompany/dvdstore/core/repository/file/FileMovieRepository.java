@@ -22,6 +22,9 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     }
 
     public void add( Movie movie){
+
+        long lastId = list().stream().map(Movie::getId).max(Long::compare).orElse(0L);
+        movie.setId(lastId+1);
         FileWriter writer;
         try{
             writer=new FileWriter(file, true);                    // instanciation du FileWriter encours, pour utiliser l'objet de type File afin d'écrire dans un fichier
@@ -37,6 +40,8 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     @Override
     public List<Movie> list() {
         List<Movie> movies= new ArrayList<>();
+
+
 
         try(BufferedReader br = new BufferedReader(new FileReader(file))) {
             for(String line; (line = br.readLine()) !=null; ) {
@@ -97,4 +102,6 @@ public class FileMovieRepository implements MovieRepositoryInterface {
         movie.setDescription("UNKNOWN");
         return movie;
     }
+
+
 }

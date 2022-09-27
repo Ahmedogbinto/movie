@@ -10,11 +10,15 @@ import java.util.List;
 public class MemoryMovieRepository implements MovieRepositoryInterface {
 
     private static List<Movie> movies = new ArrayList<>();
+    private static long lastId = 0L;
+
 
     public void add(Movie movie){
+
+        movie.setId(lastId++);
         movies.add(movie);
 
-        System.out.println("Memoire interne: Le DVD a bien été ajouté avec succèes a la liste des films");
+        System.out.println("Memory: Le film" +movie.getTitle()+" a été ajouté");
     }
 
     @Override
