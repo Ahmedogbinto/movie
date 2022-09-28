@@ -5,6 +5,8 @@ public class Movie {
     private String genre;
     private Long id;
     private String description;
+
+
     public String getTitle() {
         return title;
     }
@@ -32,4 +34,6 @@ public class Movie {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }
