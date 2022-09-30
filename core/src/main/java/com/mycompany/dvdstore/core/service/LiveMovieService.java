@@ -20,11 +20,12 @@ private MovieRepositoryInterface movieRepository;
         this.movieRepository = movieRepository;
     }
 
-    public void registerMovie(Movie movie){
+    public Movie registerMovie(Movie movie){
 
         movieRepository.add(movie);
 
         System.out.println("Le Film a bien été ajouté dans fichier txt");
+    return movie;
     }
 
     @Override

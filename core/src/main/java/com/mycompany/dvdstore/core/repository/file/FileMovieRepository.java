@@ -21,7 +21,7 @@ public class FileMovieRepository implements MovieRepositoryInterface {
         this.file = file;
     }
 
-    public void add( Movie movie){
+    public Movie add( Movie movie){
 
         long lastId = list().stream().map(Movie::getId).max(Long::compare).orElse(0L);
         movie.setId(lastId+1);
@@ -35,6 +35,7 @@ public class FileMovieRepository implements MovieRepositoryInterface {
             e.printStackTrace();
         }
         System.out.println("Fichier txt: Le titre du film est "+movie.getTitle()+" et son genre est "+movie.getGenre());
+    return movie;
     }
 
     @Override
