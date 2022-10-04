@@ -9,8 +9,8 @@ import java.util.List;
 
 @Service
 public class LiveMovieService implements MovieServiceInterface {
-@Autowired
-private MovieRepositoryInterface movieRepository;
+    @Autowired
+    private MovieRepositoryInterface movieRepository;
 
     public MovieRepositoryInterface getMovieRepository() {
         return movieRepository;
@@ -20,16 +20,14 @@ private MovieRepositoryInterface movieRepository;
         this.movieRepository = movieRepository;
     }
 
-    public Movie registerMovie(Movie movie){
 
-        movieRepository.add(movie);
-
-        System.out.println("Le Film a bien été ajouté dans fichier txt");
-    return movie;
+    @Override
+    public Movie registerMovie(Movie movie) {
+        return movieRepository.add(movie);
     }
 
     @Override
-    public List<Movie> getMovieList() {
+    public List<Movie>getMovieList() {
         return movieRepository.list();
     }
 
