@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
 
+/*
 @Repository
 public class MovieRepository implements MovieRepositoryInterface {
 
@@ -51,5 +52,5 @@ public class MovieRepository implements MovieRepositoryInterface {
     }
 
 
-}
+} */
 
