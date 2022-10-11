@@ -40,6 +40,7 @@ public class FileMovieRepository implements MovieRepositoryInterface {
             e.printStackTrace();
         }
         System.out.println("Fichier txt: Le titre du film est "+movie.getTitle()+" et son genre est "+movie.getGenre());
+
     return movie;
     }
 
@@ -152,5 +153,10 @@ public class FileMovieRepository implements MovieRepositoryInterface {
     public void deleteAll() {
         throw new UnsupportedOperationException();
 
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
+        throw new UnsupportedOperationException();
     }
 }

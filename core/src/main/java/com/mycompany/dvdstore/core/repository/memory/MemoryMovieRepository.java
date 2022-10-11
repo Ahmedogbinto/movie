@@ -76,4 +76,9 @@ public class MemoryMovieRepository implements MovieRepositoryInterface {
     public void deleteAll() {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
+        throw new UnsupportedOperationException();
+    }
 }
