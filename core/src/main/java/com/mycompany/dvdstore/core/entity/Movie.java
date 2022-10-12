@@ -2,12 +2,13 @@ package com.mycompany.dvdstore.core.entity;
 
 
 import javax.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NamedEntityGraph(name="movie.actor-and-reviews", attributeNodes = {@NamedAttributeNode("mainActor"), @NamedAttributeNode("reviews")})
 public class Movie {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

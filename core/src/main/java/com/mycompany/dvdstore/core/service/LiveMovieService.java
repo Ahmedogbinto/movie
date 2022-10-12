@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class LiveMovieService implements MovieServiceInterface {
+
     @Autowired
     private MovieRepositoryInterface movieRepository;
 
@@ -41,13 +42,10 @@ public class LiveMovieService implements MovieServiceInterface {
         }
         Movie movie = optionalMovie.get();
 
-        //deproxification et initialisation des proxy
-        movie.getMainActor().getFirstName();
-        movie.getReviews().forEach(review ->{
-            review.getMark();
-            review.setMovie(null);   // Nous forçons le film à null pour eviter que Jackson ne tombe dans une boucle infinie
-        });
-
+        movie.getReviews().forEach(review ->
+            review.setMovie(null)               // Nous forçons le film à null pour eviter que Jackson ne tombe dans une boucle infinie
+        );
         return movie;
     }
+
 }
