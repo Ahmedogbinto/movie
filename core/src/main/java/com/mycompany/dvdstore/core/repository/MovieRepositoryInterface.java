@@ -10,12 +10,16 @@ import java.util.Optional;
 public interface MovieRepositoryInterface extends CrudRepository<Movie, Long> {
 
     @EntityGraph(value = "movie.actor-and-reviews" , type = EntityGraph.EntityGraphType.FETCH)
+
     Optional<Movie> findById(Long id);
 
+    /*
+        Movie add(Movie movie);
 
-    /* Movie add(Movie movie);
-     List<Movie> list();
-     Movie getById(long id); */
+        List<Movie> list();
+
+        Movie getById(long id);
+    */
 
 
 }

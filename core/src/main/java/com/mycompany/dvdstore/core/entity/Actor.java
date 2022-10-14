@@ -19,7 +19,9 @@ public class Actor {
         this.lastName = lastName;
     }
 
-    public Actor(){}
+    public Actor(){
+
+    }
 
     public Long getId() {
         return id;
